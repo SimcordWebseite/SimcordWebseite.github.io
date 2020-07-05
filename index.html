@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Eine Seite für unsere Simcord Challenge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="sims4, fixmylot, simcord. fml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Schriften -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://assets.tumblr.com/fonts/streetscript/stylesheet.css?v=1">
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Funktionen -->
+  <script type="text/javascript">
+
+    function beschreibungEinblenden(id) {
+      if (document.getElementById(id + "_beschreibung").style.display === "none") {
+        document.getElementById(id + "_beschreibung").style.display = "block";
+      } else {
+        document.getElementById(id + "_beschreibung").style.display = "none";
+      }
+    }
+
+    function zeigeSchwarzesBrett() {
+      allesVerstecken();
+      document.getElementById("schwarzesBrett").style.display = "block";
+    }
+
+    function zeigeHome() {
+      allesVerstecken();
+      document.getElementById("home").style.display = "block";
+    }
+
+    function inserierenAnzeigen() {
+      allesVerstecken();
+      document.getElementById("inserieren").style.display = "block";
+    } 
+
+    function allesVerstecken() {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("inserieren").style.display = "none";
+      document.getElementById("schwarzesBrett").style.display = "none";
+      document.getElementById("simmerAuftraege").style.display = "none";
+
+      document.getElementById("welt0").style.display = "none";
+      document.getElementById("welt1").style.display = "none";
+      document.getElementById("welt2").style.display = "none";
+      document.getElementById("welt3").style.display = "none";
+      document.getElementById("welt4").style.display = "none";
+      document.getElementById("welt5").style.display = "none";
+      document.getElementById("welt6").style.display = "none";
+      document.getElementById("welt7").style.display = "none";
+      document.getElementById("welt8").style.display = "none";
+      document.getElementById("welt9").style.display = "none";
+      document.getElementById("welt10").style.display = "none";
+      document.getElementById("welt11").style.display = "none";
+      document.getElementById("welt12").style.display = "none";
+      document.getElementById("welt13").style.display = "none";
+      document.getElementById("welt14").style.display = "none";
+      document.getElementById("welt15").style.display = "none";
+    }
+  
+    function zeigeWelt(id) {
+      allesVerstecken();
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Oswald', sans-serif;
+      color: #404040;
+    }
+
+    /* Navigation */
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      cursor: pointer;
+    }
+
+    .navbar a, .logo {
+      margin: 0 auto;
+      float: left;
+      font-size: 16px;
+      color: #818181;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 16px;  
+      border: none;
+      outline: none;
+      color: #818181;
+      padding: 15px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      color: #f1f1f1;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      color: #818181;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #BFBFBF;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Content */
+    .content {
+      margin: 0 auto;
+      font-size: 20px;
+      padding: 20px 10px;
+      max-width: 650px;
+    }
+
+    /* Haus */
+    .haus {
+      overflow: auto;
+    }
+
+    .auftrag {
+      box-shadow: 0 0 10px gray;
+      padding: 20px;
+      margin: 0 auto;
+      clear: both;
+      margin-bottom: 30px;
+    }
+
+    /* Bild von Haus */
+    .bild {
+      float: left;
+      display: block;
+      width: 240px;
+      margin-right: 30px;
+    }
+
+    /* Infos */
+    .infos {
+      vertical-align:middle;
+      margin-left: 250px;
+    }
+
+    /* Beschreibung von Haus */
+    .beschreibung {
+      display: block;
+    }
+
+    /* Aktiver Tab */
+    .active {
+      background-color: #90D0CF;
+      color: white;
+    }
+
+    /* Inhalt des Dropdown */
+    .dropdown-container {
+      display: none;
+      color: black;
+      padding-left: 12px;
+      padding-bottom: 40px;
+    }
+
+    /* Dropdown icon */
+    .fa-caret-down {
+      padding-left: 8px;
+    }
+
+    /* Seitlogo */
+    .logo {
+      width:36px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      cursor: auto;
+    }
+
+    iframe {
+      width: 600px;
+      height: 1500px;
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      border: none;
+      background-color: #90D0CF;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 2px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: white;
+      font-size: 20px;
+      text-align: left;
+    }
+
+    /* Schriften */
+    h2 { font-family: 'Streetscript'; color: #90D0CF; }
+
+    /* Liste */
+    ul {
+      list-style-type: none;
+      list-style-position: outside;
+      padding-left: 20px;
+      padding-right: 10px;
+      line-height: 0.5px;
+      font-size: 15px;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: 10px;
+      vertical-align: middle;
+    }
+
+    /* Keine haesslichen Links */
+    a:link {text-decoration: none; color: #404040; }
+    a:visited {text-decoration: none; color: #404040;}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- --------------------------------------- Sidebar --------------------------------------- -->
+  <div class="navbar">
+    <img class="logo" src="https://missloun.github.io/fml/logo.png"  alt="Logo">
+    <a onclick="zeigeHome()">Home</a>
+    <a onclick="inserierenAnzeigen()">Inserieren</a>
+    <a onclick="zeigeSchwarzesBrett()">Schwarzes Brett</a>
+    <div class="dropdown">
+      <button class="dropbtn">Aufträge 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a onclick="zeigeWelt('welt0')">Willow Creek</a>
+        <a onclick="zeigeWelt('welt1')">Oasis Springs</a>
+        <a onclick="zeigeWelt('welt2')">Newcrest</a>
+        <a onclick="zeigeWelt('welt3')">Magnolia Promenade</a>
+        <a onclick="zeigeWelt('welt4')">Windenburg</a>
+        <a onclick="zeigeWelt('welt5')">San Myshuno</a>
+        <a onclick="zeigeWelt('welt6')">Forgotten Hollow</a>
+        <a onclick="zeigeWelt('welt7')">Brindletonbay</a>
+        <a onclick="zeigeWelt('welt8')">Del sol Valley</a>
+        <a onclick="zeigeWelt('welt9')">Strangerville</a>
+        <a onclick="zeigeWelt('welt10')">Sulani</a>
+        <a onclick="zeigeWelt('welt11')">Glimmerbrook</a>
+        <a onclick="zeigeWelt('welt12')">Britechester</a>
+        <a onclick="zeigeWelt('welt13')">Evergreen Harbor</a>
+        <a onclick="zeigeWelt('welt14')">Granite Falls</a>
+        <a onclick="zeigeWelt('welt15')">Selvadorada</a>
+      </div>
+    </div>
+  </div>
+  <!-- --------------------------------------- Ende Sidebar --------------------------------------- -->
+
+  <!-- --------------------------------------- Content --------------------------------------- -->
+  <div class="content">
+
+    <!-- --------------------------------------- Home --------------------------------------- -->
+    <div id="home">
+      <p> Wir von der Fix my Lot - FML GmsdsbH – sind auf der Suche nach freien Baumeistern!</p>
+
+      <p> Unsere Kunden sind Shopinhaber, Familien, der Staat, oder auch Immobilienhaie die sich mit verschiedensten  Anliegen an uns wenden. Manche wollen nur neue Möbel, andere eine ganz andere Fassade oder ein neues Dach. Jeder hat eigene, andere und meist auch spezielle Vorstellungen, mit mal mehr und mal weniger Vorgaben. Nicht jeder Kunde ist einfach zufrieden zu stellen. Und es werden auch immer wieder neue oder weitere Aufträge reinkommen! </p>
+
+      <p> Wir haben ihr Interesse geweckt? Ihr Bob der Baumeister Herz schlägt schon höher? Dann sehen sie sich unser Auftragsbrett an. Dort findet ihr alle relevanten Infos, sowie natürlich die einzelnen Vorstellungen der Besitzer.</p>
+
+      <p> Wenn Sie sich dem gewachsen fühlen, wunderbar, rann an den Speck. Und zeigen sie uns ihre Ergebnisse!</p>
+
+      <p> ~ Jeder kann jeden Auftrag machen ;)</p>
+    </div>
+    <!-- --------------------------------------- Ende Home --------------------------------------- -->
+
+    <!-- --------------------------------------- Inserieren --------------------------------------- -->
+    <div id="inserieren" style="display: none;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePEX6kkKwxiRZMQ5yZnRDZgkcUZgiM6VJjovIEbcmGP1HDFw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+    </div>
+    <!-- --------------------------------------- Ende Inserieren --------------------------------------- -->
+
+    <!-- --------------------------------------- Schwarzes Brett --------------------------------------- -->
+    <div id="schwarzesBrett" style="display: none;">   
+      <p style="text-align: center;">Hier finden Sie inoffizielle Aufträge von anderen die Ihre Hilfe benötigen:</p>
+
+      <div class="auftrag">
+        <div class="haus">
+          <p><b>Omas Haus</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/omaHaus.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Windenburg, Crumble Island</p></li>
+            <li><p><i class="material-icons">person</i> Frau Müller </p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlomashaus </p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Xiana | ID:Xiana2202</p></li>
+          </ul>
+        </div class="haus">
+        <button id="SB0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="SB0_beschreibung" class="beschreibung" style="display: none;">Hallo ihr Lieben, <br><br>
+          wir haben dieses süße kleine Häuschen von unserer verstorbenen Oma geerbt. Leider steht es schon eine Weile leer und deshalb ist es nicht gerade im besten Zustand, da ich aber unser 2tes Kind erwarte würden wir gerne aus unserer Wohnung raus. Hier seid ihr gefragt, das Häuschen müsste entrümpelt und renoviert werden, ein Anbau wäre auch toll damit Platz für die Kinder ist. Wir haben Ersparnisse von 35.000 die wir in das Haus stecken wollen. Alles was man im Haus noch zu Geld machen kann könnt ihr verkaufen und das Geld auch für die Renovierung nutzen. Ich bin sehr gespannt was ihr daraus macht.<br><br>
+          Mit freundlichen Grüßen Frau Müller  
+        </p>    
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlomashaus&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a> 
+      </div>
+
+      <div class="auftrag">
+        <div class="haus">
+          <p><b>Knarrende Hütte</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/knarrendeHuette.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Willow Creek, Foundry Cove</p></li>
+            <li><p><i class="material-icons">person</i> Frau Marks </p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlchaotikhaus  </p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Maggieontop | ID:mutschekiepchen3</p></li>
+          </ul>
+        </div class="haus">
+        <button id="SB1" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="SB1_beschreibung" class="beschreibung" style="display: none;">Sehr geehrte/r Bauunternehmer/in, <br><br>
+          vor kurzen habe ich ein Haus auf einer Versteigerung zu einem geringen Preis erwerben können. Leider ist es sehr schmutzig und runtergekommen. Die Erde im "Garten" ist leider auch voller Steine. Wenn in diesem am Ende Rasen gepflanzt und der Baum behalten wird wäre ich äußerst dankbar! Zudem sollten die Wände neu tapeziert oder gestrichen und natürlich sollte alles saubergemacht werden. Ein Anbau für ein Büro wären auch gut. Für die Renovierung hätten sie neben den Budget welches sie durch verkaufen der enthaltenen Möbel (falls möglich) noch weitere 25.000 Simoleons.  Achso das hätte ich fast vergessen, es wäre super wenn der grüne bemalte Stuhl behalten wird.<br><br>
+          Mit freundlichen Grüßen Frau Marks.   
+        </p> 
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlchaotikhaus&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>    
+      </div>
+    </div>
+    <!-- --------------------------------------- Ende Schwarzes Brett --------------------------------------- -->
+
+    <!-- --------------------------------------- Welten --------------------------------------- -->
+    <!-- Willow Creek -->
+    <div id="welt0" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Willow Creek:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Zum Blauen Samt</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/zumBlauenSamt.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Willow Creek, Crawdad Quarter</p></li>
+            <li><p><i class="material-icons">person</i> Louis Fitzgerald</p></li>
+            <li><p><i class="material-icons">home</i>Bar</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmljazzbar</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Doc Hattori</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W0A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W0A0_beschreibung" class="beschreibung" style="display: none;">Hey Ho meine lieben Baumeister, <br><br>
+        Ich hab da diese süße kleine Bar erworben, Mitten in Willow Creek, der Hochburg des Jazz! Der Vorbesitzer hatte wohl gar kein Händchen, was das betrifft. Also sei so gut und mach meine Bar zum besten Jazz Club der Stadt!<br><br>
+        Ich dachte an dunklen Holzboden, ein paar dunkelrote Tapeten neben der Holzvertäfelung wären auch nicht schlecht, oder?
+        Oh und meint ihr wir könnten eine kleine Bühne einbauen?<br><br>
+        - Euer Louis
+        </p>
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmljazzbar&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>     
+      </div>
+    </div>
+
+    <!-- Oasis Springs -->
+    <div id="welt1" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Oasis Springs:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Agaven-Haus</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/agavenHaus.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Oasis Springs, Bedrock Strait</p></li>
+            <li><p><i class="material-icons">person</i> Anonym</p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlagavenhaus</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Smoerley</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W1A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W1A0_beschreibung" class="beschreibung" style="display: none;">Guten Tag, <br><br>
+        mein bester Freund und ich haben uns dieses kleine, aber feine Häuschen gekauft um endlich unseren Traum einer WG zu verwirklichen. Nachdem wir das Haus in seinem aktuellen Zustand erworben haben, konnten wir nun auf selbstverständlich ~legale~ Weise weitere 20.000 Simoleons aufbringen, welche wir gerne in eine Renovierung und Anpassung des Hauses investieren würden. Als ersten Schritt möchten wir dringend mehr Licht im Haus haben. Ein Anbau mit einem separaten Büro ist ebenfalls essentiell um unsere… Geschäfte vorantreiben zu können.  Ansonsten ist mein Freund ein begeisterter Musiker und bittet um die Möglichkeit sein Hobby in unserem Haus ausleben zu können. <br><br>
+        Wenn ich bitte einmal die kleineren Details ansprechen darf… Ich hätte gerne einen Fernseher, damit wir von dem Sofa, das mit Sicherheit sehr intentional platziert wurde auch eine interessante Aussicht haben. Außerdem bitte ich darum die Küchengeräte zu aktualisieren und das Kinderbücherregal zu ersetzten. Wir sind nicht wählerisch was den Stil, oder das Farbschema angeht, solange es zusammenpasst. <br><br>
+        ….eine Sache noch. Neulich im Simkea bin ich über ein Clownbild gestolpert, das sehr meinem Geschmack entsprochen hat, ich habe es aber leider nicht gekauft. Falls du sowas nochmal finden solltest, würde sich das bestimmt super im Haus machen!<br><br>
+        Danke für deine Hilfe!<br><br>
+        Ama… äähm.. Anonym! 
+        </p>  
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlagavenhaus&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>   
+      </div>
+    </div>
+
+    <!-- Style Newcrest-->
+    <div id="welt2" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Newcrest:</p>
+      <p style="text-align: center;"> So much empty:(</p>
+    </div>
+
+    <!-- Style Magnolia Promenade-->
+    <div id="welt3" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Magnolia Promenade:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Paddywacks Emporium</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/paddywacksEmporium.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Magnolia Promenade</p></li>
+            <li><p><i class="material-icons">person</i> Sasha Paddywack</p></li>
+            <li><p><i class="material-icons">home</i>Laden</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlpaddywack</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Smoerley</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W3A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W3A0_beschreibung" class="beschreibung" style="display: none;">Huhu, <br><br>
+        ich bin Sasha und habe vor kurzem das Familienunternehmen in Magnolia Promenade übernommen. Das Laden-Inventar ist ein wenig veraltet und ich habe nun endlich Zeit und Simoleons um Dinge zu verändern. Mein größter Traum ist es das Geschäft in einen Spielzeugladen für Kinder zu verwandeln. Ich würde den klassischen Stil des Hauses gerne beibehalten, Wände dürfen aber eingerissen und verändert werden. Von innen wünsche ich mir den Laden bunt und einladend, aber immer noch stilvoll! Meine Eltern haben in jüngsten Renovierungen (welche auch schon ein paar Jahre her sind) die erste Etage ausgebaut. Mein Traum ist es die erste Etage in eine Einliegerwohnung zu verwandeln, sodass ich nach stressigen Arbeitstagen auch hier schlafen kann. Ich bitte darum meine Schreinerbank in dieser Wohnung unterzubringen, damit ich vor Ort Spielsachen produzieren kann. Ich mag warme Farben sehr gerne und bitte die Wohnung in einen gemütlichen Ort zum Wohlfühlen zu verwandeln. <br><br>
+        Ich hoffe, dass du meine Wünsche meinen Erwartungen entsprechend umsetzen kannst!  <br><br>
+        -Sasha Paddywack
+        </p>  
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlpaddywack&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a> 
+      </div>
+    </div>
+
+    <!-- Style Windenburg-->
+    <div id="welt4" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Windenburg:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b>  Landhaus Kronenberg</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/landhausKronenberg.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Windenburg, Windslar</p></li>
+            <li><p><i class="material-icons">person</i> Mila Munch</p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlmunch</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Doc Hattori</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W4A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W4A0_beschreibung" class="beschreibung" style="display: none;">Sehr geehrte Architekten und Meister des Bau! <br><br>
+        Ich mag unser Häuschen von Außen echt gern, aber ohje beim Innenausbau hat der Architekt echt geschlafen... Schafft es jemand, unser Haus von Innen umzubauen, ohne dass es seinen äußeren Charme verliert?
+        Reiße innen so viele Wände ein wie nötig und platziere Neue, dennoch gibt es Dinge zu beachten!<br><br>
+        Wichtig wäre uns das die beiden Rinder... äh Kinder endlich ein getrenntes Reich haben... Wenn du schon dabei bist, neue Möbel wären auch nicht schlecht. Nur mein großes Bett, die Büsten und das Porzellan im Esszimmer sollten bitte erhalten bleiben. Das sind nämlich Familienerbstücke... Am besten lässt du mein Schlafzimmer und mein Büro altmodisch, den Rest des Hauses hätten die Kinder aber gerne modern.<br>
+        Für unseren Gunther wollen wir das kleine Hobbyhäuschen in eine Wohnung umwandeln geht das? Oh und der Garten, kannst du daraus etwas Ansehnliches machen? Gerne kannst du die Terrasse verändern...<br>
+        Ein Whirlpool wäre auch fein! Ach und bevor ich es vergesse, der Grundstückswert sollte anschließend nicht mehr als 100.000$ betragen. Immerhin muss ich es mir auch leisten können!<br><br>
+        Mit freundlichen Gruß,<br>
+        Mila Munch
+        </p>  
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlmunch&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>   
+      </div>
+    </div>
+
+    <!-- Style San Myshuno-->
+    <div id="welt5" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in San Myshuno:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Penthouse Fontänenblick</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/penthouseFontaenenblick.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> San Myshuno, Künstlerviertel</p></li>
+            <li><p><i class="material-icons">person</i> Frank </p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück </p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlsanmyshuno</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Smoerley</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W5A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W5A0_beschreibung" class="beschreibung" style="display: none;">Hallo Freunde der Sonne, <br><br>
+        wenn man an einen klassischen Junggesellen, der alleine in einem Penthouse wohnt, hat man wahrscheinliche andere Vorstellungen als… mich im Kopf. Meine Freunde versuchen ständig mich zu überreden das Haus in einen “Partypalast” zu verwandeln, aber ich bin eher ein ruhiger Einzelgänger und bin bewusst über alle anderen gezogen um mich vor ihnen zurückziehen zu können. Ich sitze gerne auf meiner Dachterasse und beobachte das geschäftige Treiben der Stadt. <br><br>
+        Mein Penthouse möchte ich gerne als Ort nutzen, um meinen kreativen Strömen freien Lauf zu lassen. Ich möchte Orte zum malen haben und einen schönen Ausblick um meine Gedichte zu schreiben. Außerdem hätte ich gerne ein komplett neues Layout für mein Badezimmer, da dieses meine kreative Atmosphäre massiv stört. Darüber hinaus würde ich eine meiner Dachterrassen gerne in eine “Chill-Area” verwandeln um einen Ort zu haben um meinen Blasenmacher abzustellen. Des Weiteren wären Sitzgelegenheiten und ein Mikrofon sehr wünschenswert, um humorvolle und entspannte Abende mit meinem Poetry-Slam Club verbringen zu können <br><br>
+        Da ich Selbstständig bin, habe ich leider nicht unendlich viel Simoleons, aber ich denke, mit einem Budget von 35.000 zusätzlichen Simoleons solltest du einiges erreichen können.<br><br>
+        Danke, und ich freu mich auf meine neue Wohnung! <br> 
+        Bis die Tage, Frank!
+        </p> 
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlsanmyshuno&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>    
+      </div>
+    </div>
+
+    <!-- Style Forgotten Hollow-->
+    <div id="welt6" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Forgotten Hollow:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Palais Knobloch</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/palaisKnobloch.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Forgotten Hollow</p></li>
+            <li><p><i class="material-icons">person</i> Sir Roderick von Simbrücken</p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück </p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlknobloch</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Doc Hattori</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W6A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W6A0_beschreibung" class="beschreibung" style="display: none;">Werte Architekten, <br><br>
+        ich wende mich heute an Sie mit einer dringlichen Bitte. <br><br>
+        Mit Bedauern musste ich feststellen, mein Elternhaus hat es in die “Gut, Schöner, Simlisch” geschafft – Sie denken: oh, das ist aber schön für Sie?! Nein - die Rubrik ist ein einziger HOHN! In dem Bericht wurden die fürchterlichsten Häuser der Max und Sister - Baupfusch AG gekürt.
+        Fürchterliches Roofing hieß es da, und viel zu bunt. Angeblich fügt es sich nicht in das Landschaftsbild ein! Ihr habt mir auf der Stelle zu Helfen! Eigentlich sollte das doch mein Altersruhesitz werden, aber ich kann ja wohl kaum in ein Haus mit so einen Ruf ziehen.<br><br>
+        Zwischenzeitlich hat mein verstorbener Bruder dort gelebt, der einen fragwürdigen Geschmack hatte. Nun ja seine Verwandtschaft sucht man sich nicht aus, oder?<br>
+        Ich meine all der Knoblauch? Wie ein Rattenloch stinkt es dort! Und auch die Einrichtung passt gar nicht – eine EINZIGE KATASTROPHE!<br>
+        Am besten kommt alles in den Müll! Und ihr richtet es mir alles schön rustikal ein, denn von neumodernen Firlefanz halte ich gar nichts.<br>
+        Das Dach sollte in jedem Fall ein wenig überarbeitet werden und auch die Fassade sollte sich besser in die Umgebung integrieren. Nach hintenraus wünsche ich mir einen schönen Balkon. Ein Garten der meinen Stand würdig ist, darf auch nicht fehlen. In der kalten Jahreszeit würde ich gerne meinen morgendlichen Tee im Wintergarten genießen und ihr macht mir das gefälligst möglich.<br><br>
+        Es ist mir völlig gleich, wie das alles umgesetzt wird und wenn das Haus dafür ein paar Meter verschoben wird, ist mir das auch recht! Ich ertrage das nicht länger!<br><br>Hochachtungsvoll, <br>
+        Sir Roderick von Simbrücken
+        </p>     
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlknobloch&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>
+      </div>
+    </div>
+
+    <!-- Style Brindleton Bay-->
+    <div id="welt7" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Brindleton Bay:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Welpenpark</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/welpenpark.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Brindleton Bay, Sable Square</p></li>
+            <li><p><i class="material-icons">person</i> Stadt Brindleton Bay</p></li>
+            <li><p><i class="material-icons">home</i>Park</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlwelpenpark</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Sajabell</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W7A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W7A0_beschreibung" class="beschreibung" style="display: none;">Werte Wähler und Baumeister! <br><br>
+        Unser Allseits beliebtes Brindleton Bay hat bei den letzten Umfragen etwas Mager abgeschnitten, in Sachen Parks.  Nun ist uns bewusst, unser Welpenpark hat Potenzial nach oben und hiermit geht der Bauauftrag zur Renovierung eben jenen Parks an Sie! <br><br>
+        Bedingungen:<br>
+        - Aktivitäten für die ganze Familie <br>
+        - die gänzliche Umzäunung ist für die Sicherheitsbestimmungen unerlässlich.<br>
+        - Hundeparkour<br>
+        - Toiletten<br>
+        - Essen für Sim und Tier<br><br>
+        Die Renovierung darf die 15.000 Marke nicht übersteigen, je mehr Steuergelder sie sparen, desto besser! <br><br>
+        Mit freundlichsten Grüßen,<br><br>
+        Bürgermeisterin Schnurrhaarita 
+        </p> 
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlwelpenpark&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>    
+      </div>
+    </div>
+
+    <!-- Style Del Sol Valley-->
+    <div id="welt8" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Del Sol Valley:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Die Ward-Zuflucht</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/dieWardZuflucht.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Sol Valley, The Pinnacles</p></li>
+            <li><p><i class="material-icons">person</i>  Judith Ward</p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlward</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Sajabell</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W8A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W8A0_beschreibung" class="beschreibung" style="display: none;">Eine absolute, Bodenlose FRECHHEIT.  <br><br>
+        Mein Haus ist Jahrhunderte Alt, steht auf diesen Hügel, da war Del Sol Valley noch absolut nichts, ein Sandkorn in der Wüste. Und da traut sich diese Kakerlake, dieser Dreck unter der Schuhsohle meines Butlers.. Dieser Schorf eines Journalisten von der “Gut, Schöner, Simlisch” hat mein Haus als veraltet bezeichnet, als bestenfalls dürftig und stillos dargestellt. <br>
+        DAS GEHT NICHT.<br><br>
+        Ich habe diese grandiose, stilechte Terrasse nach hinten raus, überblicke die Stadt von dem wunderschönen Grundstück aus. Sie ist frisch renoviert und mein absoluter Traum. Nun will ich vor allem eine Außenrenovierung die diesen Stil auffängt. Die Türen und Fenster müssen neu. Die Struktur des Hauses muss etwas verspielter und pompöser sein.<br>
+        Ich denke an den Queen Anne Style, mit etwas französischem Landhaus. Auch das Innenleben soll angepasst, aber nicht völlig verändert werden. Ich denke an helle Farben, viel weiß und vielleicht pastellige Töne, ein wenig in barokischer Richtung, in hell. Ich will nichts schwarzes mehr sehen oder dunkles Holz. Marmor ist die Wahl, Gold und Silber mag ich beides, gegen Protz habe ich nichts einzuwenden. Die Leute sollen ruhig denken sie wären bei der Queen zu Besuch. <br>
+        Ich denke auch die Treppe könnte dramatischer in Szene gesetzt sein. Und der Garten soll mehr in die englische Richtung gehen, der braucht dringend Überarbeitung. Die offene, überdachte Terrasse hinten, soll es durchaus geben, nur auch hier: MEHR! Klassisch und stilvoll. <br>
+        Und mein Geldspeicher braucht eine neue, sinnvollere Unterbringung<br><br>
+        Das Budget liegt bei 100.000$. Wenn Ihr wirklich gute Vorschläge habt, könnt ihr meine Assistentin Saja Bell bitten, ob sie eine Budget-Erweiterung von 50.000$ gewährt. Ich bin inzwischen auf Urlaub und komme erst wieder, wenn ich diese Schmach nicht weiter ertragen muss.
+        </p> 
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlward&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>    
+      </div>
+    </div>
+
+    <!-- Style Strangerville-->
+    <div id="welt9" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Strangerville:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Panorama-Plateau</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/panoramaPlateau.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Strangerville, Shady Acres</p></li>
+            <li><p><i class="material-icons">person</i> Anonym</p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlpanoramaplateau</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Smoerley</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W9A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W9A0_beschreibung" class="beschreibung" style="display: none;">Liebes Renovierungsteam,  <br><br>
+        meine Frau, unsere 2 Kinder und ich haben dieses Haus geerbt. Zu unserem Schrecken ist es fast leer. Die Bewohner von Strangerville munkeln, dass die Mutter ihr unwesen in diesem Haus getrieben hat und Inhalte an sich gerissen hat, ich persönlich kann mir allerdings vorstellen, dass mein Onkel sich den Tot meiner Eltern zu nutzen gemacht hat um seine Schulden zu begleichen. <br><br>
+        Wenn ich bitte einmal die kleineren Details ansprechen darf… Ich hätte gerne einen Fernseher, damit wir von dem Sofa, das mit Sicherheit sehr intentional platziert wurde auch eine interessante Aussicht haben. Außerdem bitte ich darum die Küchengeräte zu aktualisieren und das Kinderbücherregal zu ersetzten. Wir sind nicht wählerisch was den Stil oder das Farbschema angeht, solange es zusammenpasst. <br>
+        Naja, wie auch immer - Meine Familie und ich müssen in einem Monat in der Lage sein in dieses Haus ziehen zu müssen und wir bitten um eure Hilfe uns auf diesem Weg zu helfen. <br>
+        Wir haben ein Budget von 70.000 Simoleons. Während wir den viktorianischen Stils dieses Hauses sehr gerne mögen, wäre eine allgemein hellere Atmosphäre wünschenswert. Mein Sohn ist ein großer Fan von Voidkreaturen und meine Tochter hat gesagt, dass sie ihr Zimmer gerne mit lilanen Akzenten schmücken würde. Da die Stadt gerade sehr angespannt ist und merkwürdige Dinge geschehen, weiß ich auch nicht so recht, wem ich hier trauen kann. Von daher würde ich dich auch im geheimen, ohne das meine Frau sich sorgen machen muss, bitten mir einen Raum einzurichten, in dem ich über das Rätsel recherchieren kann. Ein Abhörgerät würde mich auch beruhigen. Ich möchte nicht als Paranoid rüberkommen, das bin ich nämlich DEFINITIV nicht, aber sicher ist sicher. <br><br>
+        Apropos sicher. Wir wohnen an einer gefährlichen Klippe, darum würde ich gerne einen eingezäunten Garten haben, damit meiner Kinder in Sicherheit im Garten spielen können. Meine Frau hat darüber hinaus allgemeine “Schönheitsmakel” am Haus beklagt. Ich persönlich sehe diese nicht, aber falls euch etwas auffällt, könnt ihr diese gerne anpassen! <br><br>
+        Nun dann, mein Aluhut wartet auf mich. Ich zähle auf eure Hilfe!
+        </p> 
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlpanoramaplateau&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>    
+      </div>
+    </div>
+
+    <!-- Style Sulani-->
+    <div id="welt10" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Sulani:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Die Sandbar</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/dieSandbar.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Sulani, Ohan’Ali</p></li>
+            <li><p><i class="material-icons">person</i> Anonym</p></li>
+            <li><p><i class="material-icons">home</i>Bar </p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlSandbar</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Sajabell</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W10A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W10A0_beschreibung" class="beschreibung" style="display: none;">Heyjo Freunde! <br><br>
+        Ich habe diese kleine Strandbar in Sulani geerbt, kennt ihr bestimmt, die mit dem Strohdach, genau. Ich denke sie hat so langsam ihre besten Tage gesehen, auch wenn ich einiges daran mag. Ich mag das Holz und die Gemütlichkeit - und die Bartheke an sich, letzteres sollte aber denke ich in einer Durchreiche, oder ganz draußen stehen. Wir sind am Strand und nicht in einer Dunkelkammer. <br><br>
+        Bei der Arbeit brauche ich die Sonne im Rücken und nicht die Taschenlampe.<br><br>
+        Ich brauche einen gemütlich bequemen Innenbereich für Schlechtwetter, einen Terrassenplatz mit Tischen, aber auch ein bisschen was im Garten, Liegestühle und so. Und ich habe die Schnauze voll von dem Klo, das muss ans Haus rann, ein zweites wäre auch gut.<br>
+        Eine explizite Tanzfläche wäre schön, kann man das auch irgendwie eingerahmt werden, mit Deko oder sowas?<br><br>
+        Ich habe keine ganz konkreten Vorstellungen, aber ihr spürt den Vibe oder? Chillex und so. Offen und gemütlich, Bunt mit Holz wär mir wichtig. Ich will den Reggae aufdrehen, chillen und die Mädels tanzen sehen.<br>
+        Geld spielt übrigens gar keine Rolle!<br><br>
+        Haut rein, euer Marley 
+        </p> 
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlSandbar&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>    
+      </div>
+    </div>
+
+    <!-- Style Glimmerbrook-->
+    <div id="welt11" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Glimmerbrook:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Wohnsitz am Wasserfallr</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/wohnsitzAmWasserfall.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Glimmerbrook</p></li>
+            <li><p><i class="material-icons">person</i> Grace Anasi</p></li>
+            <li><p><i class="material-icons">home</i>Bar </p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlanasi</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Doc Hattori</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W11A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W11A0_beschreibung" class="beschreibung" style="display: none;">Hey di dibeli du, Meister des Bauens!<br>
+        Ich habe ein ernstes Anliegen an euch.<br><br>
+        Wir sind in dieses kleine Haus gezogen und haben leider blind dem Makler vertraut. <br>
+        Unsere Verpflichtungen haben es einfach nicht zugelassen, das Haus vorab zu besichtigen. Das die Fenster ausgetauscht werden müssen war uns ja klar, aber das es so gravierende Mängel gibt?<br>
+        Dibelidu... nun wir sind gerade ein wenig am Verzweifeln. Und hoffen sehr, dass sich einer unserem trauten Heim annimmt, seht es euch an.. Momentan leidet unsere Lebensfreude sehr stark darunter, so ist es uns niemals möglich unsere Ausbildung erfolgreich zu beenden!<br><br>
+        Ein kleiner Kräutergarten wäre super! Oh und wenn die Treppe bei der Küche nutzbar wäre, würden wir uns auch freuen. Ich glaube bei den inneren und äußeren Wänden muss man einiges ändern, damit dieses Haus vernünftig nutzbar wird.<br>
+        Wir brauchen auch nicht so viele Schlafzimmer und ja um ehrlich zu sein muss hier alles überarbeitet werden! <br>
+        Wohnzimmer, Bad, Büro.... – Meine Güte, das ganze Haus muss anders!<br>
+        In der Küche gefallen uns lediglich die Theken, die Geräte allerdings sind furchtbar. Würde man es hinbekommen den Rest des Hauses, an den Stil der Küche anzupassen?<br><br>
+        tü de lü <br>
+        Eure Grace Anasi 
+        </p>  
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlanasi&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>   
+      </div>
+    </div>
+
+    <!-- Style Britechester-->
+    <div id="welt12" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Britechester:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Lauschige Lagune</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/lauschigeLagune.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Britechester, Foxbury Institut</p></li>
+            <li><p><i class="material-icons">person</i> Doc Doc Anthony F.H.Lambert</p></li>
+            <li><p><i class="material-icons">home</i>Mensa</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmlmensa</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Doc Hattori</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W12A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W12A0_beschreibung" class="beschreibung" style="display: none;">Ehrenwerte Architekten, <br><br>
+        als Leiter des Foxbury Institutes beschämt es mich zu tiefst, dass wir auf die Versprechen der Max uns Sister - Baupfusch AG hereingefallen sind. Uns wurde der Bau moderner Gemeinschaftsräumlichkeiten zugesichert, nun sehen Sie sich an, was wir bekommen haben. Der Studentenrat ist kurz davor die Studenten zum Protest zu bewegen, die Situation ist mehr als dringlich. <br>
+        In unserer Notlage hat uns die Stadt 50.000$ zugesichert, und wir selbst können weitere 25.000$ aufbringen. Insgesamt sollte der Grundstückswert, nach Ende des Umbaus auf keinen Fall mehr als 230.000$ betragen.<br>
+        Im Zuge dieser Anzeige möchte ich Ihnen die wichtigsten Punkte unseres Lastenhefts darlegen:<br><br>
+        - Installation einer Photovoltaikanlage (Solar)<br>
+        - Installation von Tausammlern<br>
+        - errichten einer kleinen Bibliothek<br>
+        - einrichten von mindestens 10 modernen IT Arbeitsplätzen<br>
+        - eine Werkstatt für Robotik - Makerspace/ Werkstatt für sonstige arbeiten<br>
+        - Mensa die auch als solche zu erkennen ist<br>
+        - aufstellen von Snackautomaten <br>
+        - Freizeitanlagen für unsere Studenten<br><br>
+        Im gesamten dachten wir an ein durchaus modernes Erscheinungsbild der Räumlichkeiten. Im Prinzip soll es den Geist unseres Instituts widerspiegeln: modern und umweltfreundlich, nachhaltig. Im Zuge dessen erteilen wir die Genehmigung massive Änderungen, sowohl an der Außen- sowie Innenstruktur vorzunehmen.<br><br>
+        Für den Freizeitbereich haben wir keine konkreten Vorstellungen, würden uns allerdings wünschen das es sowohl außen als auch innen Möglichkeiten für Zusammenkünfte gibt. Des Weiteren wäre sinnvoll Logikfähigkeiten, als auch die Musikalischen Künste durch Freizeitangebote zu fördern.<br>
+        Einer Bitte des Studentenrates möchten wir allemal nachkommen: Es sollte unbedingt eine Möglichkeit gegeben sein um zu „Grillen“.<br><br>
+        Wenn Sie sich dieser Herausforderung gewachsen fühlen, freue ich mich auf eine enge Zusammenarbeit.<br><br>
+        Leiter des Foxbury Institutes, Doc Doc Anthony  F. H.  Lambert
+        </p>
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmlmensa&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>     
+      </div>
+    </div>
+
+    <!-- Style Evergreen Harbor-->
+    <div id="welt13" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Evergreen Harbor:</p>
+      <div class="auftrag">
+        <div class="haus">
+          <p><b> Pigulock-Villa</b></p>
+          <img class="bild" src="https://missloun.github.io/fml/pigulockVilla.jpg" alt="Bild">
+          <ul class="infos">
+            <li><p><i class="material-icons">location_on</i> Evergreen Harbor, Conifer Station</p></li>
+            <li><p><i class="material-icons">person</i> Yasemin Tinker</p></li>
+            <li><p><i class="material-icons">home</i>Wohngrundstück</p></li>
+            <li><p><i class="material-icons">public</i> #fixmylot #simcord #fmltinker</p></li>
+            <li><p><i class="material-icons">contact_mail</i>Vermittler: Sajabell</p></li>
+          </ul>
+        </div class="haus">
+        <button id="W13A0" onclick="beschreibungEinblenden(id)">Details <i class="fa fa-caret-down"></i></button>
+        <p id="W13A0_beschreibung" class="beschreibung" style="display: none;">Liebe Bauherren und Baudamen! <br><br>
+        Ich habe ein riesiges Problem. Meine Frau Tina und ich sind in ein  als historisches Wahrzeichen gekennzeichnetes Haus gezogen und es ist.. eine mittlere Katastrophe. Eigentlich wollte Tina das Haus selbst renovieren, aber erst hatten wir den ganzen Streit mit der Gemeinde und nun ist sie als Fabrikantin voll im Einsatz. <br>
+        Wir wollen dennoch schöner Wohnen, also suche ich um Hilfe an.<br><br>
+        Erstmal zum Denkmalschutz, damit ihr genau wisst wie es bei uns aussieht:<br><br>
+        - Der Fries oberhalb unseres Eingangs und im 2. Sock darf nicht entfernt, aber erweitert werden. Wir dürfen im Inneren des Fries im 2. Stock einen Raum, oder Balkon erschaffen und das wünschen wir uns auch.<br>
+        - Generell dürfen wir außer beim Platz oberhalb des Eingangs, nichts an der Front ändern, außer Säulen und Fenster/Türen.  Also keine Wände erweitern oder den Backstein ändern.<br>
+        - Der Herd und der Kühlschrank dürfen nicht raus, aber dürfen gestrichen werden.<br>
+        - Die Karmine dürfen aufgemöbelt, aber nicht verrückt werden.<br><br>
+        Hinten am Haus dürfen Anpassungen vorgenommen werden und auch die sind ausdrücklich erwünscht. - An dieser Stelle wünschen wir uns eine gemütliche Terrasse für die ganze Familie und vielleicht ein bisschen Gartengestaltung statt Betonwüste? <br>
+        Sprechen wir vom Elefanten im Raum, das Dach muss neu. Das konnte ich zum glück erwirken, es sollen nur die Schindeln, also das Dachmuster weiterhin dunkel bleiben.<br>
+        Und dann haben wir noch den Floorplan. GOTT sei Dank, können wir hier einiges machen. Ich will hier auch eine deutliche veränderung. Unten wo die Küche ist, soll die Werkstatt von Tina hinkommen, dort müssen die Wände so bleiben, aber die andere Innenwände können raus und alles darf neu und sinnvoll strukturiert werden. Unten sollen: Küche, Wohnzimmer, Esszimmer (mit großem Esstisch!) Badezimmer mit Waschmaschinenanschluss, eine volle Werkstatt und mein Büro Platz finden. Die Treppe muss leider bleiben wo sie ist, aber die Wände können angepasst werden. <br>
+        Auch oben, ein neuer Floorplan. Da die Rückseite des Hauses angepasst werden darf, kann ich mir hier auch einen Balkon vorstellen, wenn vorne etwas anderes geplant sein soll. Generell mag ich ein großes Badezimmer, will das Klo aber extrig. Ich kann mir auch vorstellen, das ich statt unten, oben mein Büro beziehe, mit einer kleinen Bibliothek? Außerdem hätte ich gerne ein liebevolles Kinderzimmer für unsere kleine Maus, nicht zu kindlich, sie ist schon recht reif.<br>
+        Wir werden auch in naher Zukunft einen kleinen Jungen adoptieren, also wäre ein Babyzimmer oben ein absolutes Muss. <br>
+        Die Einrichtung soll auch überarbeitet werden. wir mögen es (harmonisch) bunt und lebendig, gemütlich und gerne auch improvisiert. Der graue Anstrich an den Wänden geht so überhaupt nicht. Einzig mein Büro möchte ich in einem klassischen Altmodischen stil, also die Möbel dürfen keinesfalls weichen. einzelne altmodische Möbel aus dem Haus können in mein Büro, der Rest darf bitte ersetzt werden.<br>
+        Der Karmin oben darf keinesfalls von dort weg, wegen dem historischen Schutz, da wünschen wir uns eine richtig gemütliche Ecke, die brauchen wir unten nicht unbedingt.<br>
+        Oh und das alles muss natürlich möglichst ökonomisch sein, wenn das Haus sinnvoll mit Wasser/Stromspeichern erweitert werden kann, würden wir uns sehr freuen! Allerdings darf der ganze Umbau mit allem drum und dran 25.000$ kosten. Aller maximalst können wir uns einen Grundstückswert von 120.000§ leisten,
+        wir freuen uns wenn das Budget nicht ausgereizt wird, aber ja die Grenze steht.<br><br>
+        Es tut mir Leid das es so ein langer Fließtext wurde, ich denke da hat die Autorin in mir zugeschlagen. Ich hoffe unsere Vorstellungen kommen klar bei euch allen an und ihr macht uns ein wunderschönes gemütliches Heim.<br><br>
+        Eure Yasemin, Tina und Olive Tinker
+        </p>  
+        <a style="color: #818181;" href="https://www.ea.com/de-de/games/the-sims/the-sims-4/pc/gallery/browse?category=all&searchtype=hashtag&sortby=downloads&time=all&searchquery=fmltinker&max=50&maxis=false"> <i class="material-icons">assignment</i> Hier gelangen Sie zu fertigen Renovierungen</a>   
+      </div>
+    </div>
+
+    <!-- Style Granity Falls-->
+    <div id="welt14" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Granity Falls:</p>
+      <p style="text-align: center;"> So much empty:(</p>
+    </div>
+
+    <!-- Style Selverdorada-->
+    <div id="welt15" style="display: none;">
+      <p style="text-align: center;">Aktuelle Aufträge in Selverdorada:</p>
+      <p style="text-align: center;"> So much empty:(</p>
+    </div>
+    <!-- --------------------------------------- Ende Welten --------------------------------------- -->
+  </div>
+  <!-- --------------------------------------- Ende Content --------------------------------------- -->
+
+</body>
+</html>
