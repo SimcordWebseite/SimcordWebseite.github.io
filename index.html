@@ -81,13 +81,15 @@
       overflow: hidden;
       background-color: #333;
       cursor: pointer;
+      padding-left: 2%;
+      padding-right: 2%;
     }
 
     .navbar a, .logo {
       margin: 0 auto;
       float: left;
       font-size: 16px;
-      color: #818181;
+      color: #B2B2B2;
       text-align: center;
       padding: 15px;
       text-decoration: none;
@@ -102,7 +104,7 @@
       font-size: 16px;  
       border: none;
       outline: none;
-      color: #818181;
+      color: #B2B2B2;
       padding: 15px;
       background-color: inherit;
       font-family: inherit;
@@ -116,7 +118,7 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      color: #818181;
+      color: #B2B2B2;
       background-color: #f9f9f9;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -189,6 +191,7 @@
     /* Inhalt des Dropdown */
     .dropdown-container {
       display: none;
+      overflow: none;
       color: black;
       padding-left: 12px;
       padding-bottom: 40px;
@@ -252,6 +255,30 @@
     a:link {text-decoration: none; color: #404040; }
     a:visited {text-decoration: none; color: #404040;}
 
+    /* Falls der Bildschirm zu schmal ist untereinander, anstatt nebeneinander  */
+    @media screen and (max-width:800px) {
+      .bild {
+        margin: 0 auto;
+        display: block;
+        width: 98%;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-bottom: 30px;
+      }
+
+      /* Beschreibung von Haus */
+      .infos {
+        vertical-align:middle;
+        margin-left: 0px;
+      }
+
+      .navbar {
+        overflow: hidden;
+        background-color: #333;
+        cursor: pointer;
+      }
+    }
+
   </style>
 
 </head>
@@ -262,7 +289,6 @@
   <div class="navbar">
     <img class="logo" src="https://SimcordWebseite.github.io/fml/logo.png"  alt="Logo">
     <a onclick="zeigeHome()">Home</a>
-    <a onclick="inserierenAnzeigen()">Inserieren</a>
     <a onclick="zeigeSchwarzesBrett()">Schwarzes Brett</a>
     <div class="dropdown">
       <button class="dropbtn">Aufträge 
@@ -287,6 +313,7 @@
         <a onclick="zeigeWelt('welt15')">Selvadorada</a>
       </div>
     </div>
+    <a onclick="inserierenAnzeigen()" style="float: right;">Inserieren</a>
   </div>
   <!-- --------------------------------------- Ende Sidebar --------------------------------------- -->
 
